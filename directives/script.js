@@ -13,8 +13,8 @@ angular.module("directivesDemo",[])
 		"item3"
 	]
 	$scope.addItem = function(){
-		$scope.items.push($scope.item);
-		$scope.item = "";
+		$scope.items.push($scope.item1);
+		$scope.item1 = "";
 	};
 
 	//ng if demo model

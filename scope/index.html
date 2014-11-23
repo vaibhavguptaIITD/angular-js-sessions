@@ -8,10 +8,12 @@
 </head>
 
 <body ng-app="scopeDemoApp">
-
+<div ng-controller="CommonCtrl">
     <div ng-controller="Controller1">
+        {{commonModel}}
         {{model}}
         <div ng-controller="Controller2">
+            {{model1}}
             {{model}}
         </div>
     </div>
@@ -19,7 +21,7 @@
     <div ng-controller="Controller3">
          {{model}}
     </div>
-
+</div>
 </body>
 
 </html>

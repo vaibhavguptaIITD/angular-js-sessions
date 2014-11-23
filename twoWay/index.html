@@ -5,28 +5,31 @@
     <script type="text/javascript" src="../scripts/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="../scripts/angular.js"></script>
     <script type="text/javascript">
-    angular.module("demoApp", []);
+    angular.module("existingModuleApp", [])
+.controller("demoController", function($scope){
+        //Define, change model here
+        $scope.model1 = "abc";
+        //Define functions which view can use
+        $scope.functionA = function(){
+            abcd();
+            alert("133");
+        };
+        function abcd(){
+
+            alert("efgh");
+        }
+});
     </script>
 </head>
 
-<body ng-app="demoApp">
+<body ng-app="existingModuleApp">
 
-    <input type="text" ng-model="model1">
-    <span id="modelView">{{model1}}</span>
+    <div ng-controller="demoController">
+        {{model1}}
+        <button type="button" ng-click="functionA()">Button</button>
+    </div>
 
-<!-- 
-    <input type="text" id="modelInput">
-    <span id="modelView"></span>
-
-    <script type="text/javascript">
-    var $modelView = $("#modelView");
-    $("#modelInput").on("keydown", function() {
-        var $this = $(this);
-        $modelView.html($this.val());
-    });
-    </script>
-
- -->
+!!!{{model1}}
 
 </body>
 
