@@ -17,27 +17,33 @@
       <ul id="itemList" class="list-group">
         
       </ul>
-      <input type="text" placeholder="Add new task"></input>
+      <input type="text" id="newTask" placeholder="Add new task"></input>
       <button type="button" class="btn btn-primary" id="addTask">Add Task</button> 
     </div>
 
     <script type="text/javascript" src="../scripts/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="../scripts/bootstrap.js"></script>
+     <script type="text/javascript" src="../scripts/handlebars-v2.0.0.js"></script>
+    <script type="text/javascript" src="../scripts/data.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript">
-
+      $(document).ready(function(){
+        Todo.initTodo();
+      })
     </script>
 
     <script id="item-template" type="text/x-handlebars-template">
+    {{#each this}}
       <li class="item list-group-item">
           <label for="item_{{id}}">
             <input type="checkbox" id="item_{{id}}" class="_taskCB">
-              {{name}}
+              <span class="_itemName">{{name}}</span>
           </label>
           <button type="button" class="btn btn-default _removeButton">
             <span class="glyphicon glyphicon-remove"></span>
           </button>
         </li>
+    {{/each}}
     </script>
   </body>
 </html>
