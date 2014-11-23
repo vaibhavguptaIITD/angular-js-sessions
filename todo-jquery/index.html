@@ -1,49 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Todo JQUERY</title>
+
+<head>
+    <title>Todo Angular</title>
 
     <!-- Bootstrap -->
     <link href="../css/css/bootstrap.css" rel="stylesheet">
 
     <link href="../css/app.css" rel="stylesheet">
 
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <h1>Todo</h1>
-      You have completed <span id="completedItems">0</span> of <span id="totalItems">0</span> items
-      <!-- Items list will come here-->
-      <ul id="itemList" class="list-group">
-        
-      </ul>
-      <input type="text" id="newTask" placeholder="Add new task"></input>
-      <button type="button" class="btn btn-primary" id="addTask">Add Task</button> 
+        <h1>Todo</h1> You have completed <span id="completedItems">0</span> of <span id="totalItems">0</span> items
+        <!-- Items list will come here-->
+        <ul id="itemList" class="list-group">
+            <li class="item list-group-item">
+                <label for="item_1">
+                    <input type="checkbox" id="item_1">
+                    <span>Item1</span>
+                </label>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </li>
+        </ul>
+        <input type="text" id="newTask" placeholder="Add new task"></input>
+        <button type="button" class="btn btn-primary" id="addTask">Add Task</button>
     </div>
 
     <script type="text/javascript" src="../scripts/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../scripts/angular.js"></script>
     <script type="text/javascript" src="../scripts/bootstrap.js"></script>
-     <script type="text/javascript" src="../scripts/handlebars-v2.0.0.js"></script>
     <script type="text/javascript" src="../scripts/data.js"></script>
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        Todo.initTodo();
-      })
-    </script>
 
-    <script id="item-template" type="text/x-handlebars-template">
-    {{#each this}}
-      <li class="item list-group-item">
-          <label for="item_{{id}}">
-            <input type="checkbox" id="item_{{id}}" class="_taskCB">
-              <span class="_itemName">{{name}}</span>
-          </label>
-          <button type="button" class="btn btn-default _removeButton">
-            <span class="glyphicon glyphicon-remove"></span>
-          </button>
-        </li>
-    {{/each}}
-    </script>
-  </body>
+
+</body>
+
 </html>
