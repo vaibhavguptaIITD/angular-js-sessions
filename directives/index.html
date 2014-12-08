@@ -14,13 +14,18 @@
 
 <body ng-app="directiveDemo">
     <div class="container" ng-controller="DemoController">
-        <div parent>
-            <div child></div>
-        </div>
-        <div sibling1 sibling2></div>
-        <div optional-directive directive1></div>
+        <div list-fruits></div>
     </div>
-    <script>
+    <script id="/listFruits.html" type="text/ng-template">
+        <div>
+            <p>List of fruits</p>
+            <ul>
+                <li ng-repeat="fruit in fruits">
+                    {{fruit}}
+                </li>
+            </ul>
+
+        </div>
     </script>
     <script type="text/javascript" src="../scripts/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="../scripts/angular.js"></script>
