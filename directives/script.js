@@ -4,6 +4,8 @@ angular.module("directiveDemo",[])
 })
 .directive("listFruits", function(){
 	return {
-		templateUrl : "/listFruits.html"
+		restrict: 'AE', 
+		templateUrl : "/listFruits.html",
+		replace: true
 	}
 });
