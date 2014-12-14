@@ -21,7 +21,7 @@ angular.module("TodoApp",[])
 	}
 	
 })
-.service("TodoService", function($http){
+.factory("TodoService", function($http){
 
 	var url = "http://localhost:2403/items";
 	var items = null;
@@ -55,10 +55,10 @@ angular.module("TodoApp",[])
 		});
 	}
 
-	angular.extend(this,{
+	return {
 		getItems : getItems,
 		editItem : editItem,
 		removeItem : removeItem,
 		addItem : addItem
-	});
+	};
 });
