@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Directives</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/css/jquery-ui.css" rel="stylesheet">
+    <link href="../css/app.css" rel="stylesheet">
+
+
+</head>
+
+<body ng-app="TodoApp">
+    <div class="container" ng-controller="TodoController">
+       <ul>
+            <li ng-repeat="item in todos">
+                <label for="todo_{{$index}}"><input type="checkbox" id="todo_{{$index}}" ng-model="item.done" ng-click="updateItem(item)">{{item.name}}</label>
+                <button type="button" class="btn btn-default" ng-click="removeItem(item)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </li>
+       </ul>
+        <label for="addItem">Add item</label>
+        <input type="text" ng-model="newItem" id="addItem">
+        <button type="button" ng-click="addNewItem()">Add Item</button>
+    </div>
+    <script type="text/javascript" src="../scripts/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../scripts/angular.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+
+</body>
+
+</html>
