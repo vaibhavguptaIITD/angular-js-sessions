@@ -16,20 +16,29 @@
     <div class="container" ng-controller="FilterController">
        <label for="currency">Currency</label>
        <input type="text" ng-model="employee.salary" id="currency">
-       <span id="showCurrency">
-            {{employee.salary | currency}}
-       </span>
        <label for="name">Name</label>
        <input type="text" ng-model="employee.name" id="name">
-       <span id="showName">
-            {{employee.name | uppercase}}
-       </span>
-
        <label for="department">Department</label>
        <input type="text" ng-model="employee.department" id="department">
-       <span id="showDepartment">
-            {{employee.department | lowercase}}
-       </span>
+       <div>
+        <ul>
+            <li>
+                Currency : {{employee.salary | currency}}
+            </li>
+            <li>
+                Name :  {{employee.name | uppercase}}
+            </li>
+            <li>
+                Department : {{employee.department | lowercase}}
+            </li>
+            <li>
+                Reverse Name : {{employee.name | reverse | reverse}}
+            </li>
+            <li>
+                Reverse Name Upper : {{employee.name | reverse:true | reverse}}
+            </li>
+        </ul>
+       </div>
     </div>
     <script type="text/javascript" src="../scripts/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="../scripts/angular.js"></script>
