@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Directives</title>
+    <title>Filters</title>
 
     <!-- Bootstrap -->
     <link href="../css/css/bootstrap.css" rel="stylesheet">
@@ -12,19 +12,24 @@
 
 </head>
 
-<body ng-app="TodoApp">
-    <div class="container" ng-controller="TodoController">
-       <ul>
-            <li ng-repeat="item in todos">
-                <label for="todo_{{$index}}"><input type="checkbox" id="todo_{{$index}}" ng-model="item.done" ng-click="updateItem(item)">{{item.name}}</label>
-                <button type="button" class="btn btn-default" ng-click="removeItem(item)">
-                    <span class="glyphicon glyphicon-remove"></span>
-                </button>
-            </li>
-       </ul>
-        <label for="addItem">Add item</label>
-        <input type="text" ng-model="newItem" id="addItem">
-        <button type="button" ng-click="addNewItem()">Add Item</button>
+<body ng-app="FilterApp">
+    <div class="container" ng-controller="FilterController">
+       <label for="currency">Currency</label>
+       <input type="text" ng-model="employee.salary" id="currency">
+       <span id="showCurrency">
+            {{employee.salary | currency}}
+       </span>
+       <label for="name">Name</label>
+       <input type="text" ng-model="employee.name" id="name">
+       <span id="showName">
+            {{employee.name | uppercase}}
+       </span>
+
+       <label for="department">Department</label>
+       <input type="text" ng-model="employee.department" id="department">
+       <span id="showDepartment">
+            {{employee.department | lowercase}}
+       </span>
     </div>
     <script type="text/javascript" src="../scripts/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="../scripts/angular.js"></script>
