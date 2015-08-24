@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Directives</title>
+
+</head>
+
+<body ng-app="directiveDemo">
+    <div ng-controller="Controller1">
+        <!-- ng-bind-->
+        <span ng-bind="model"></span>
+        <!-- ng-click -->
+        <button ng-click="model='model_changed'">Click me</button>
+        <button ng-click="changeModel()">Click me</button>
+        <!-- ng-repeat -->
+        <ul>
+            <li ng-repeat="item in items">
+                {{item}}
+            </li>
+        </ul>
+        <!-- ng-if -->
+        <div ng-if="checked">
+            Checkbox checked
+        </div>
+        <input type="checkbox" id="cb" ng-model="checked">
+        <label for="cb">Click me</label>
+    </div>
+    <script type="text/javascript" src="scripts/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="scripts/angular.js"></script>
+    <script type="text/javascript">
+        angular.module("directiveDemo",[])
+        .controller("Controller1", function($scope){
+            $scope.model = "Model";
+            $scope.changeModel = function(){
+                $scope.model = "Model_changed_function";
+            };
+            $scope.items = ["item1", "item2"];
+        });
+
+    </script>
+
+
+</body>
+
+</html>
