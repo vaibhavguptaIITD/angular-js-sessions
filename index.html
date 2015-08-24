@@ -7,7 +7,21 @@
 </head>
 
 <body ng-app="sampleApp">
-    
+    <div ng-controller="Controller1">
+        {{model}}
+    </div>
+    <div ng-controller="Controller2">
+        {{model}}
+    </div>
+    <script type="text/javascript">
+        angular.module("sampleApp",[])
+        .controller("Controller1", function($scope){
+            $scope.model = "model_ctrl1";
+        })
+        .controller("Controller2", function($scope){
+            $scope.model = "model_ctrl2";
+        });
+    </script>
 </body>
 
 </html>
